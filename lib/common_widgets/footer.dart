@@ -1,3 +1,4 @@
+import 'package:drsya_mobile_app/home_page.dart';
 import 'package:flutter/material.dart';
 
 class BottomNavBarScreen extends StatefulWidget {
@@ -24,7 +25,7 @@ class _BottomNavBarScreenState extends State<BottomNavBarScreen> {
           title: Text('Survey Item $index'),
         ),
       ),
-      Center(child: Text('My Surveys')),
+      HomePage(),
       Center(child: Text('History')),
       Center(child: Text('Profile')),
     ];
