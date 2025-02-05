@@ -1,3 +1,6 @@
+import 'package:drsya_mobile_app/account_setting.dart';
+import 'package:drsya_mobile_app/app_preferences.dart';
+import 'package:drsya_mobile_app/support_feedback.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -99,10 +102,10 @@ class ProfilePage extends StatelessWidget {
               const SizedBox(height: 32),
 
               // Settings List
-              _buildSettingsTile(Icons.settings, "Account Settings"),
+              _buildSettingsTile(context, Icons.settings, "Account Settings"),
               _buildSettingsTile(
-                  Icons.settings_applications, "App Preferences"),
-              _buildSettingsTile(Icons.feedback, "Support & Feedback"),
+                  context, Icons.settings_applications, "App Preferences"),
+              _buildSettingsTile(context, Icons.feedback, "Support & Feedback"),
 
               // Log Out Button
               Padding(
@@ -153,7 +156,7 @@ class ProfilePage extends StatelessWidget {
     );
   }
 
-  Widget _buildSettingsTile(IconData icon, String title) {
+  Widget _buildSettingsTile(BuildContext context, IconData icon, String title) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Card(
@@ -172,7 +175,30 @@ class ProfilePage extends StatelessWidget {
           ),
           trailing: Icon(Icons.arrow_forward_ios,
               size: 16, color: Color.fromRGBO(5, 30, 41, 1)),
-          onTap: () {},
+          onTap: () {
+            if (title == "App Preferences") {
+              // Navigate to App Preferences Screen
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const AppPreferencesScreen()),
+              );
+            } else if (title == "Account Settings") {
+              // Navigate to Account Settings Screen
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const AccountSettingsScreen()),
+              );
+            } else if (title == "Support & Feedback") {
+              // Navigate to Support & Feedback Screen
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const SupportFeedbackScreen()),
+              );
+            }
+          },
         ),
       ),
     );
