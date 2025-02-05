@@ -17,6 +17,9 @@ class _BottomNavBarScreenState extends State<BottomNavBarScreen> {
   void initState() {
     super.initState();
     _pages = [
+      HomePage(
+        scrollController: widget.scrollController,
+      ),
       // Scrollable Content
       ListView.builder(
         controller: widget.scrollController,
@@ -25,7 +28,6 @@ class _BottomNavBarScreenState extends State<BottomNavBarScreen> {
           title: Text('Survey Item $index'),
         ),
       ),
-      HomePage(),
       Center(child: Text('History')),
       Center(child: Text('Profile')),
     ];

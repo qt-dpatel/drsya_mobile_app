@@ -1,19 +1,30 @@
 import 'package:drsya_mobile_app/categories.dart';
 import 'package:drsya_mobile_app/new_servey.dart';
+import 'package:drsya_mobile_app/recommonded_survey.dart';
+import 'package:drsya_mobile_app/survey_card.dart';
+import 'package:drsya_mobile_app/survey_closing_soon.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+  final ScrollController scrollController;
+  const HomePage({super.key, required this.scrollController});
 
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
+      controller: scrollController,
       child: Column(
+        spacing: 20,
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: const [
+        children: [
           NewSurveys(),
-          SizedBox(height: 20),
           Categories(),
+          SurveyListPage(
+            surveys: dummySurveys,
+          ),
+          SurveyClosingSoon(surveys: surveysClosingSoon),
+          RecommondedSurvey(surveys: recommondedDummySurvey),
+          SizedBox(height: 32),
         ],
       ),
     );
