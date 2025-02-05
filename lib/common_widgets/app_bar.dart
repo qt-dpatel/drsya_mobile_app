@@ -1,4 +1,4 @@
-import 'package:drsya_mobile_app/common_widgets/footer.dart';
+import 'package:drsya_mobile_app/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -191,7 +191,7 @@ class _CustomAppBarScreenState extends State<CustomAppBarScreen> {
 
           // Scrollable Content
           Expanded(
-            child: BottomNavBarScreen(
+            child: HomePage(
               scrollController: _scrollController,
             ),
           ),

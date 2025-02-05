@@ -1,9 +1,9 @@
-import 'package:drsya_mobile_app/home_page.dart';
+import 'package:drsya_mobile_app/common_widgets/app_bar.dart';
+import 'package:drsya_mobile_app/profile.dart';
 import 'package:flutter/material.dart';
 
 class BottomNavBarScreen extends StatefulWidget {
-  final ScrollController scrollController;
-  const BottomNavBarScreen({super.key, required this.scrollController});
+  const BottomNavBarScreen({super.key});
   @override
   State<BottomNavBarScreen> createState() => _BottomNavBarScreenState();
 }
@@ -17,19 +17,17 @@ class _BottomNavBarScreenState extends State<BottomNavBarScreen> {
   void initState() {
     super.initState();
     _pages = [
-      HomePage(
-        scrollController: widget.scrollController,
-      ),
+      CustomAppBarScreen(),
       // Scrollable Content
       ListView.builder(
-        controller: widget.scrollController,
+        controller: ScrollController(),
         itemCount: 80,
         itemBuilder: (context, index) => ListTile(
           title: Text('Survey Item $index'),
         ),
       ),
       Center(child: Text('History')),
-      Center(child: Text('Profile')),
+      ProfilePage(),
     ];
   }
 

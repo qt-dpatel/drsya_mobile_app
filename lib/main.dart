@@ -1,4 +1,4 @@
-import 'package:drsya_mobile_app/common_widgets/app_bar.dart';
+import 'package:drsya_mobile_app/common_widgets/footer.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: CustomAppBarScreen(),
+      home: BottomNavBarScreen(),
     );
   }
 }
