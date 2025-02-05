@@ -33,19 +33,25 @@ class _CustomAppBarScreenState extends State<CustomAppBarScreen> {
   void _handleScroll() {
     double offset = _scrollController.offset;
     double minScroll = 0;
-    double maxScroll = 100; // Transition occurs in this range
+    double maxScroll = 100; // Scroll range for animation
 
-    // Normalize progress between 0 and 1
     double progress = (offset - minScroll) / (maxScroll - minScroll);
     progress = progress.clamp(0, 1);
 
+    double screenHeight = MediaQuery.of(context).size.height;
+
+    double maxAppBarHeight =
+        screenHeight * 0.22; // Example: ~22% of screen height
+    double minAppBarHeight =
+        screenHeight * 0.12; // Example: ~12% of screen height
+
     setState(() {
-      _appBarHeight = 150 - (progress * 80); // Shrink height smoothly
-      _cornerRadius = 32 - (progress * 16); // Reduce curve radius
-      _searchBarOpacity = 1 - progress; // Fade out search bar
-      _appBarElevation = progress * 5; // Add elevation gradually
-      _showSearchIcon =
-          progress == 1; // Show search icon when search disappears
+      _appBarHeight =
+          maxAppBarHeight - (progress * (maxAppBarHeight - minAppBarHeight));
+      _cornerRadius = 32 - (progress * 16);
+      _searchBarOpacity = 1 - progress;
+      _appBarElevation = progress * 5;
+      _showSearchIcon = progress == 1;
     });
   }
 

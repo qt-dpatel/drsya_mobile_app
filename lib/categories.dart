@@ -49,14 +49,42 @@ class Categories extends StatelessWidget {
       },
     ];
 
+    // Split categories into two rows
+    List<Map<String, dynamic>> firstRow = categories.sublist(0, 4);
+    List<Map<String, dynamic>> secondRow = categories.sublist(4, 8);
+
+    Widget buildCategory(Map<String, dynamic> category) {
+      return Expanded(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Container(
+              padding: const EdgeInsets.all(18),
+              decoration: BoxDecoration(
+                color: category["color"],
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: Icon(category["icon"], color: Colors.black, size: 24),
+            ),
+            const SizedBox(height: 6),
+            Text(
+              category["label"]!,
+              textAlign: TextAlign.center,
+              maxLines: 2,
+              style: const TextStyle(fontSize: 12, color: Colors.black),
+            ),
+          ],
+        ),
+      );
+    }
+
     return Container(
       width: double.infinity,
       padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 16.0),
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         color: Color.fromRGBO(231, 239, 255, 1),
       ),
       child: Column(
-        spacing: 16,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const Text(
@@ -64,41 +92,15 @@ class Categories extends StatelessWidget {
             style: TextStyle(
                 fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black),
           ),
-          SizedBox(
-            width: double.infinity,
-            child: Wrap(
-              spacing: 2, // Horizontal spacing
-              runSpacing: 18, // Vertical spacing
-              alignment: WrapAlignment.start,
-              children: categories.map((category) {
-                return SizedBox(
-                  width: 80,
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Container(
-                        padding: const EdgeInsets.all(24),
-                        decoration: BoxDecoration(
-                          color: category["color"],
-                          borderRadius: BorderRadius.circular(12),
-                        ),
-                        child: Icon(category["icon"],
-                            color: Colors.black, size: 24),
-                      ),
-                      const SizedBox(height: 6),
-                      Text(
-                        category["label"]!,
-                        textAlign: TextAlign.center,
-                        maxLines: 2,
-                        style:
-                            const TextStyle(fontSize: 12, color: Colors.black),
-                      ),
-                    ],
-                  ),
-                );
-              }).toList(),
-            ),
-          ),
+          const SizedBox(height: 12),
+          Row(
+              children:
+                  firstRow.map((category) => buildCategory(category)).toList()),
+          const SizedBox(height: 16),
+          Row(
+              children: secondRow
+                  .map((category) => buildCategory(category))
+                  .toList()),
         ],
       ),
     );
