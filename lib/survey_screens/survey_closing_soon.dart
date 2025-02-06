@@ -12,7 +12,7 @@ class SurveyClosingSoon extends StatelessWidget {
     return Column(
       children: [
         Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(16.0),
           child: Row(
             spacing: 8,
             children: [
@@ -20,8 +20,8 @@ class SurveyClosingSoon extends StatelessWidget {
                 child: const Text(
                   "Surveys Closing Soon",
                   style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500,
                       color: Colors.black),
                 ),
               ),
@@ -29,7 +29,7 @@ class SurveyClosingSoon extends StatelessWidget {
                 "View All",
                 style: TextStyle(
                     fontSize: 16,
-                    fontWeight: FontWeight.bold,
+                    fontWeight: FontWeight.w500,
                     color: Color.fromRGBO(243, 111, 52, 1)),
               ),
               Icon(Icons.arrow_forward_ios_rounded,

@@ -2,17 +2,17 @@ import 'package:drsya_mobile_app/survey_screens/data/survey_model.dart';
 import 'package:drsya_mobile_app/survey_screens/survey_card_widget.dart';
 import 'package:flutter/material.dart';
 
-class SurveyListPage extends StatelessWidget {
+class FiveMinSurveys extends StatelessWidget {
   final List<SurveyModel> surveys;
 
-  const SurveyListPage({super.key, required this.surveys});
+  const FiveMinSurveys({super.key, required this.surveys});
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(16.0),
           child: Row(
             spacing: 8,
             children: [
@@ -20,8 +20,8 @@ class SurveyListPage extends StatelessWidget {
                 child: const Text(
                   "5-Minute Surveys",
                   style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500,
                       color: Colors.black),
                 ),
               ),
@@ -29,7 +29,7 @@ class SurveyListPage extends StatelessWidget {
                 "View All",
                 style: TextStyle(
                     fontSize: 16,
-                    fontWeight: FontWeight.bold,
+                    fontWeight: FontWeight.w500,
                     color: Color.fromRGBO(243, 111, 52, 1)),
               ),
               Icon(Icons.arrow_forward_ios_rounded,

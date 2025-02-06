@@ -2,23 +2,23 @@ import 'package:drsya_mobile_app/survey_screens/data/survey_model.dart';
 import 'package:drsya_mobile_app/survey_screens/survey_card_widget.dart';
 import 'package:flutter/material.dart';
 
-class RecommondedSurvey extends StatelessWidget {
+class OnGoingSureys extends StatelessWidget {
   final List<SurveyModel> surveys;
 
-  const RecommondedSurvey({super.key, required this.surveys});
+  const OnGoingSureys({super.key, required this.surveys});
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         Padding(
-          padding: const EdgeInsets.all(16.0),
+          padding: const EdgeInsets.all(8.0),
           child: Row(
             spacing: 8,
             children: [
               Expanded(
                 child: const Text(
-                  "Recommended for You",
+                  "Ongoing Surveys",
                   style: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.w500,

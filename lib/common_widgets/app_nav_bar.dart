@@ -1,5 +1,6 @@
 import 'package:drsya_mobile_app/home/home_screen.dart';
 import 'package:drsya_mobile_app/profile/profile.dart';
+import 'package:drsya_mobile_app/survey_screens/my_surveys.dart';
 import 'package:flutter/material.dart';
 
 class AppBottomNavBar extends StatefulWidget {
@@ -18,14 +19,7 @@ class _AppBottomNavBarState extends State<AppBottomNavBar> {
     super.initState();
     _pages = [
       HomeScreen(),
-      // Scrollable Content
-      ListView.builder(
-        controller: ScrollController(),
-        itemCount: 80,
-        itemBuilder: (context, index) => ListTile(
-          title: Text('Survey Item $index'),
-        ),
-      ),
+      MySurveys(),
       Center(child: Text('History')),
       ProfilePage(),
     ];

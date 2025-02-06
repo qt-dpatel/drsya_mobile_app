@@ -32,7 +32,8 @@ class SurveyCard extends StatelessWidget {
         // Open project details
       },
       child: SizedBox(
-        width: 182,
+        width: 172,
+        height: 220,
         child: Card(
           clipBehavior: Clip.hardEdge,
           shape: RoundedRectangleBorder(

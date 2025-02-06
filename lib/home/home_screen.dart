@@ -4,7 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:drsya_mobile_app/home/categories.dart';
 import 'package:drsya_mobile_app/survey_screens/new_servey.dart';
 import 'package:drsya_mobile_app/survey_screens/recommonded_survey.dart';
-import 'package:drsya_mobile_app/survey_screens/survey_card.dart';
+import 'package:drsya_mobile_app/survey_screens/5_min_surveys.dart';
 import 'package:drsya_mobile_app/survey_screens/survey_closing_soon.dart';
 
 import '../survey_screens/data/survey_model.dart';
@@ -205,7 +205,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 children: [
                   NewSurveys(),
                   Categories(),
-                  SurveyListPage(
+                  FiveMinSurveys(
                     surveys: dummySurveys,
                   ),
                   SurveyClosingSoon(surveys: surveysClosingSoon),
