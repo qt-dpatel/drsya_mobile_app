@@ -1,3 +1,4 @@
+import 'package:drsya_mobile_app/history/history.dart';
 import 'package:drsya_mobile_app/home/home_screen.dart';
 import 'package:drsya_mobile_app/profile/profile.dart';
 import 'package:drsya_mobile_app/survey_screens/my_surveys.dart';
@@ -20,7 +21,7 @@ class _AppBottomNavBarState extends State<AppBottomNavBar> {
     _pages = [
       HomeScreen(),
       MySurveys(),
-      Center(child: Text('History')),
+      History(),
       ProfilePage(),
     ];
   }

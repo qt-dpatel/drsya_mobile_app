@@ -71,7 +71,7 @@ final List<SurveyModel> recommondedDummySurvey = [
     startDate: "May 16",
     endDate: "Aug 1",
     responces: '20m 54s',
-    status: SurveyStatus.inProgress,
+    status: SurveyStatus.completed,
   ),
   SurveyModel(
     clientId: "C002",
@@ -81,7 +81,7 @@ final List<SurveyModel> recommondedDummySurvey = [
     startDate: "May 16",
     endDate: "Aug 16",
     responces: '10m 4s',
-    status: SurveyStatus.inProgress,
+    status: SurveyStatus.completed,
   ),
   SurveyModel(
     clientId: "C003",
@@ -92,7 +92,7 @@ final List<SurveyModel> recommondedDummySurvey = [
     startDate: "May 16",
     endDate: "Aug 16",
     responces: '20m54s',
-    status: SurveyStatus.inProgress,
+    status: SurveyStatus.completed,
   ),
   SurveyModel(
     clientId: "C004",

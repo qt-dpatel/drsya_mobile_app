@@ -1,16 +1,15 @@
 import 'package:drsya_mobile_app/survey_screens/data/survey_model.dart';
-import 'package:drsya_mobile_app/survey_screens/ongoing_surveys.dart';
 import 'package:drsya_mobile_app/survey_screens/survey_card_widget.dart';
 import 'package:flutter/material.dart';
 
-class MySurveys extends StatefulWidget {
-  const MySurveys({super.key});
+class History extends StatefulWidget {
+  const History({super.key});
 
   @override
-  State<MySurveys> createState() => _MySurveysState();
+  State<History> createState() => _HistoryState();
 }
 
-class _MySurveysState extends State<MySurveys> {
+class _HistoryState extends State<History> {
   List<String> selectedCategories = [];
   List<String> selectedTimeFilters = [];
   List<String> selectedDateFilters = [];
@@ -194,7 +193,7 @@ class _MySurveysState extends State<MySurveys> {
       appBar: AppBar(
         title: const Center(
           child: Text(
-            "Surveys",
+            "History",
             style: TextStyle(color: Colors.white),
           ),
         ),
@@ -262,13 +261,10 @@ class _MySurveysState extends State<MySurveys> {
                     const SizedBox(height: 10),
                   ],
                 ),
-              OnGoingSureys(
-                surveys: dummySurveys,
-              ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 8.0),
                 child: Text(
-                  "Available Surveys",
+                  "Completed Surveys",
                   style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.w500,
@@ -285,11 +281,11 @@ class _MySurveysState extends State<MySurveys> {
                     crossAxisSpacing: 4, // Space between columns
                     mainAxisSpacing: 8, // Space between rows
                     childAspectRatio: 0.65),
-                itemCount: dummySurveys.length,
+                itemCount: recommondedDummySurvey.length,
                 itemBuilder: (context, index) {
                   return LayoutBuilder(
                     builder: (context, constraints) {
-                      return SurveyCard(survey: dummySurveys[index]);
+                      return SurveyCard(survey: recommondedDummySurvey[index]);
                     },
                   );
                 },
