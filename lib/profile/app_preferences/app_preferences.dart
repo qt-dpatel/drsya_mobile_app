@@ -1,4 +1,4 @@
-import 'package:drsya_mobile_app/notification_settings.dart';
+import 'package:drsya_mobile_app/profile/app_preferences/notification_settings.dart';
 import 'package:flutter/material.dart';
 
 class AppPreferencesScreen extends StatelessWidget {

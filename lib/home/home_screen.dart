@@ -1,16 +1,20 @@
-import 'package:drsya_mobile_app/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:drsya_mobile_app/home/categories.dart';
+import 'package:drsya_mobile_app/survey_screens/new_servey.dart';
+import 'package:drsya_mobile_app/survey_screens/recommonded_survey.dart';
+import 'package:drsya_mobile_app/survey_screens/survey_card.dart';
+import 'package:drsya_mobile_app/survey_screens/survey_closing_soon.dart';
 
-class CustomAppBarScreen extends StatefulWidget {
-  const CustomAppBarScreen({super.key});
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
 
   @override
-  State<CustomAppBarScreen> createState() => _CustomAppBarScreenState();
+  State<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _CustomAppBarScreenState extends State<CustomAppBarScreen> {
+class _HomeScreenState extends State<HomeScreen> {
   final ScrollController _scrollController = ScrollController();
   double _appBarHeight = 140;
   double _cornerRadius = 32;
@@ -191,8 +195,22 @@ class _CustomAppBarScreenState extends State<CustomAppBarScreen> {
 
           // Scrollable Content
           Expanded(
-            child: HomePage(
-              scrollController: _scrollController,
+            child: SingleChildScrollView(
+              controller: _scrollController,
+              child: Column(
+                spacing: 20,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  NewSurveys(),
+                  Categories(),
+                  SurveyListPage(
+                    surveys: dummySurveys,
+                  ),
+                  SurveyClosingSoon(surveys: surveysClosingSoon),
+                  RecommondedSurvey(surveys: recommondedDummySurvey),
+                  SizedBox(height: 32),
+                ],
+              ),
             ),
           ),
         ],

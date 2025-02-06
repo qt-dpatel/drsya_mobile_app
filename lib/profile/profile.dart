@@ -1,6 +1,6 @@
-import 'package:drsya_mobile_app/account_setting.dart';
-import 'package:drsya_mobile_app/app_preferences.dart';
-import 'package:drsya_mobile_app/support_feedback.dart';
+import 'package:drsya_mobile_app/profile/account_settings/account_setting.dart';
+import 'package:drsya_mobile_app/profile/app_preferences/app_preferences.dart';
+import 'package:drsya_mobile_app/profile/support_and_feedback/support_feedback.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 

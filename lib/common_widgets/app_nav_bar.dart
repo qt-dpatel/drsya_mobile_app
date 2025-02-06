@@ -1,14 +1,14 @@
-import 'package:drsya_mobile_app/common_widgets/app_bar.dart';
-import 'package:drsya_mobile_app/profile.dart';
+import 'package:drsya_mobile_app/home/home_screen.dart';
+import 'package:drsya_mobile_app/profile/profile.dart';
 import 'package:flutter/material.dart';
 
-class BottomNavBarScreen extends StatefulWidget {
-  const BottomNavBarScreen({super.key});
+class AppBottomNavBar extends StatefulWidget {
+  const AppBottomNavBar({super.key});
   @override
-  State<BottomNavBarScreen> createState() => _BottomNavBarScreenState();
+  State<AppBottomNavBar> createState() => _AppBottomNavBarState();
 }
 
-class _BottomNavBarScreenState extends State<BottomNavBarScreen> {
+class _AppBottomNavBarState extends State<AppBottomNavBar> {
   int _selectedIndex = 0;
 
   late List<Widget> _pages;
@@ -17,7 +17,7 @@ class _BottomNavBarScreenState extends State<BottomNavBarScreen> {
   void initState() {
     super.initState();
     _pages = [
-      CustomAppBarScreen(),
+      HomeScreen(),
       // Scrollable Content
       ListView.builder(
         controller: ScrollController(),

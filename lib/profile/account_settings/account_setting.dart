@@ -1,4 +1,4 @@
-import 'package:drsya_mobile_app/change_password.dart';
+import 'package:drsya_mobile_app/profile/account_settings/change_password.dart';
 import 'package:flutter/material.dart';
 
 class AccountSettingsScreen extends StatelessWidget {

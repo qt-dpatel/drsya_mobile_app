@@ -1,7 +1,7 @@
-import 'package:drsya_mobile_app/contact_support.dart';
-import 'package:drsya_mobile_app/help_center.dart';
-import 'package:drsya_mobile_app/provide_feedback.dart';
-import 'package:drsya_mobile_app/report_issue.dart';
+import 'package:drsya_mobile_app/profile/support_and_feedback/contact_support.dart';
+import 'package:drsya_mobile_app/profile/support_and_feedback/help_center.dart';
+import 'package:drsya_mobile_app/profile/support_and_feedback/provide_feedback.dart';
+import 'package:drsya_mobile_app/profile/support_and_feedback/report_issue.dart';
 import 'package:flutter/material.dart';
 
 class SupportFeedbackScreen extends StatelessWidget {
