@@ -1,5 +1,6 @@
 import 'package:drsya_mobile_app/profile/account_settings/account_setting.dart';
 import 'package:drsya_mobile_app/profile/app_preferences/app_preferences.dart';
+import 'package:drsya_mobile_app/profile/profile_card.dart';
 import 'package:drsya_mobile_app/profile/support_and_feedback/support_feedback.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -159,47 +160,30 @@ class ProfilePage extends StatelessWidget {
   Widget _buildSettingsTile(BuildContext context, IconData icon, String title) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),
-      child: Card(
-        color: Color.fromRGBO(242, 246, 253, 1),
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-        elevation: 0,
-        child: ListTile(
-          leading: Icon(
-            icon,
-            color: Color.fromRGBO(5, 30, 41, 1),
-            size: 24,
-          ),
-          title: Text(
-            title,
-            style: TextStyle(fontSize: 16, fontWeight: FontWeight.normal),
-          ),
-          trailing: Icon(Icons.arrow_forward_ios,
-              size: 16, color: Color.fromRGBO(5, 30, 41, 1)),
-          onTap: () {
-            if (title == "App Preferences") {
-              // Navigate to App Preferences Screen
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => const AppPreferencesScreen()),
-              );
-            } else if (title == "Account Settings") {
-              // Navigate to Account Settings Screen
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => const AccountSettingsScreen()),
-              );
-            } else if (title == "Support & Feedback") {
-              // Navigate to Support & Feedback Screen
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => const SupportFeedbackScreen()),
-              );
-            }
-          },
-        ),
+      child: ProfileCard(
+        icon: icon,
+        title: title,
+        onTap: () {
+          if (title == "App Preferences") {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => const AppPreferencesScreen()),
+            );
+          } else if (title == "Account Settings") {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => const AccountSettingsScreen()),
+            );
+          } else if (title == "Support & Feedback") {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => const SupportFeedbackScreen()),
+            );
+          }
+        },
       ),
     );
   }

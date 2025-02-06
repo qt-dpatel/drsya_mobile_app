@@ -1,4 +1,5 @@
 import 'package:drsya_mobile_app/profile/app_preferences/notification_settings.dart';
+import 'package:drsya_mobile_app/profile/profile_card.dart';
 import 'package:flutter/material.dart';
 
 class AppPreferencesScreen extends StatelessWidget {
@@ -16,25 +17,18 @@ class AppPreferencesScreen extends StatelessWidget {
         backgroundColor: Color.fromRGBO(5, 30, 41, 1),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Card(
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-          elevation: 2,
-          child: ListTile(
-            leading: const Icon(Icons.notifications, color: Colors.black54),
-            title: const Text("Notification Settings"),
-            trailing: const Icon(Icons.arrow_forward_ios,
-                size: 16, color: Colors.black54),
-            onTap: () {
-              // Navigate to Notification Settings Screen
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => const NotificationSettingsScreen()),
-              );
-            },
-          ),
+        padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 16.0),
+        child: ProfileCard(
+          icon: Icons.notifications,
+          title: "Notification Settings",
+          onTap: () {
+            // Navigate to Notification Settings Screen
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => const NotificationSettingsScreen()),
+            );
+          },
         ),
       ),
     );

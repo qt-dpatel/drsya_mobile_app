@@ -1,3 +1,4 @@
+import 'package:drsya_mobile_app/profile/profile_card.dart';
 import 'package:drsya_mobile_app/profile/support_and_feedback/contact_support.dart';
 import 'package:drsya_mobile_app/profile/support_and_feedback/help_center.dart';
 import 'package:drsya_mobile_app/profile/support_and_feedback/provide_feedback.dart';
@@ -25,13 +26,20 @@ class SupportFeedbackScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Support & Feedback"),
+        title: const Text(
+          "Support & Feedback",
+          style: TextStyle(color: Colors.white),
+        ),
+        iconTheme: const IconThemeData(color: Colors.white),
+        backgroundColor: Color.fromRGBO(5, 30, 41, 1),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: supportOptions.map((option) {
-            return GestureDetector(
+            return ProfileCard(
+              icon: option["icon"],
+              title: option["title"],
               onTap: () {
                 if (option["title"] == "Help Center / FAQs") {
                   Navigator.push(
@@ -67,18 +75,6 @@ class SupportFeedbackScreen extends StatelessWidget {
                   // Add terms of service and privacy policy functionality
                 }
               },
-              child: Card(
-                margin: const EdgeInsets.only(bottom: 10),
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12)),
-                elevation: 2,
-                child: ListTile(
-                  leading: Icon(option["icon"], color: Colors.black54),
-                  title: Text(option["title"],
-                      style: const TextStyle(fontWeight: FontWeight.w500)),
-                  trailing: const Icon(Icons.arrow_forward_ios, size: 18),
-                ),
-              ),
             );
           }).toList(),
         ),
