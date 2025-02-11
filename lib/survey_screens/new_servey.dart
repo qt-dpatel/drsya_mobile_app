@@ -1,4 +1,5 @@
-import 'package:drsya_mobile_app/survey_screens/survey_responce.dart';
+import 'package:drsya_mobile_app/survey_screens/survey_details.dart';
+
 import 'package:flutter/material.dart';
 
 class NewSurveys extends StatelessWidget {
@@ -34,7 +35,7 @@ class NewSurveys extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const UserResponcePage()),
+                        builder: (context) => const SurveyDetailsPage()),
                   );
                 },
                 child: Container(

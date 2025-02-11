@@ -28,11 +28,10 @@ class ProfilePage extends StatelessWidget {
                       borderRadius: BorderRadius.vertical(
                         bottom: Radius.circular(32),
                       ),
-                      child: SvgPicture.asset(
-                        'assets/drysa_background.svg', // Replace with actual asset
-                        fit: BoxFit
-                            .cover, // Ensures it covers the entire container
-                        width: double.infinity, // Ensures full width
+                      child: Image.asset(
+                        'assets/drysa_main_bg.png',
+                        fit: BoxFit.fill,
+                        width: double.infinity,
                       ),
                     ),
                   ),

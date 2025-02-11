@@ -91,9 +91,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   borderRadius: BorderRadius.vertical(
                     bottom: Radius.circular(_cornerRadius),
                   ),
-                  child: SvgPicture.asset(
-                    'assets/drysa_background.svg',
-                    fit: BoxFit.cover,
+                  child: Image.asset(
+                    'assets/drysa_main_bg.png',
+                    fit: BoxFit.fill,
                     width: double.infinity,
                   ),
                 ),
