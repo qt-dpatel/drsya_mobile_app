@@ -20,50 +20,6 @@ const dummySurveyJson = '''
         "description": "this is discription of section 1"
       },
       {
-        "id": "Q10",
-        "type": "nps",
-        "subtitle": null,
-        "questionText": "this is nps",
-        "branching": {},
-        "options": null,
-        "answer": null,
-        "fileUpload": null,
-        "csatStart": 0,
-        "csatEnd": 10,
-        "csatStartName": "less Likely",
-        "csatEndName": "most Likely"
-      },
-      {
-        "id": "Q11",
-        "type": "csat",
-        "subtitle": null,
-        "questionText": "this is csat",
-        "branching": null,
-        "options": null,
-        "answer": null,
-        "fileUpload": null,
-        "csatStart": 1,
-        "csatEnd": 7,
-        "csatStartName": "less Likely",
-        "csatEndName": "most Likely"
-      },
-      {
-        "id": "Q9",
-        "type": "image",
-        "subtitle": null,
-        "questionText": "this is image",
-        "branching": null,
-        "options": null,
-        "answer": null,
-        "fileUpload": null,
-        "csatStart": 0,
-        "csatEnd": 10,
-        "csatStartName": "less Likely",
-        "csatEndName": "most Likely"
-      },
-     
-      
-      {
         "id": "Q1",
         "type": "radio",
         "subtitle": null,
@@ -333,6 +289,7 @@ class _UserResponcePageState extends State<UserResponcePage> {
     final currentSection = sections[_currentIndex];
 
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: Color.fromRGBO(5, 30, 41, 1), // Background color
       body: SafeArea(
         child: Column(

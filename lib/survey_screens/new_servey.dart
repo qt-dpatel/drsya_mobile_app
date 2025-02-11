@@ -1,3 +1,4 @@
+import 'package:drsya_mobile_app/survey_screens/survey_responce.dart';
 import 'package:flutter/material.dart';
 
 class NewSurveys extends StatelessWidget {
@@ -28,32 +29,42 @@ class NewSurveys extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             itemCount: surveys.length,
             itemBuilder: (context, index) {
-              return Container(
-                width: 156,
-                height: 86,
-                margin: const EdgeInsets.only(right: 8),
-                padding: const EdgeInsets.all(12),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.all(Radius.circular(8)),
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Expanded(
-                      child: Text(
-                        surveys[index]["title"]!,
-                        style: const TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.black),
+              return InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const UserResponcePage()),
+                  );
+                },
+                child: Container(
+                  width: 156,
+                  height: 86,
+                  margin: const EdgeInsets.only(right: 8),
+                  padding: const EdgeInsets.all(12),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.all(Radius.circular(8)),
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Expanded(
+                        child: Text(
+                          surveys[index]["title"]!,
+                          style: const TextStyle(
+                              fontSize: 14,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black),
+                        ),
                       ),
-                    ),
-                    Text(
-                      surveys[index]["date"]!,
-                      style: const TextStyle(fontSize: 12, color: Colors.grey),
-                    ),
-                  ],
+                      Text(
+                        surveys[index]["date"]!,
+                        style:
+                            const TextStyle(fontSize: 12, color: Colors.grey),
+                      ),
+                    ],
+                  ),
                 ),
               );
             },

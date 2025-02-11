@@ -1,4 +1,4 @@
-import 'package:drsya_mobile_app/survey_screens/survey_responce.dart';
+import 'package:drsya_mobile_app/home/home_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: UserResponcePage(),
+      home: HomeScreen(),
     );
   }
 }
